@@ -23,14 +23,14 @@
     <script>
         $(document).ready(function(){
                           
-                          var sites = ["http://live.zooniverse.org", "http://chicago.sciencehackday.com", "http://setlive.org","http://www.oldweather.org/voyages"];
+                          var sites = ["http://live.zooniverse.org", "http://chicago.sciencehackday.com", "http://setlive.org","http://www.planethunters.org/planetometer", "https://www.zooniverse.org/","http://www.setilive.org/"];
                           var current_site = 0;
                           $('#content').attr( 'src' , sites[current_site]);
                           setInterval(function(){
                                        if (current_site++ > sites.length-1){
                                        current_site=0;
                                        }
-                                       $('iframe').attr( 'src', sites[current_site]);
+                                       $('#content').attr( 'src', sites[current_site]);
                                        },20000);
                           });
     </script>
