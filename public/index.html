@@ -1,0 +1,42 @@
+<html>
+
+<head> 
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+ 
+ <style>
+     body{
+         width:100%;
+         height:100%;
+         margin:0px;
+         padding:0px  ;
+     }
+     
+     iframe{
+         width:100%;
+         height:100%
+         
+         
+     }
+ </style>
+ 
+    <script>
+        $(document).ready(function(){
+                          
+                          var sites = ["http://live.zooniverse.org", "http://chicago.sciencehackday.com", "http://setlive.org","http://www.oldweather.org/voyages"];
+                          var current_site = 0;
+                          $('#content').attr( 'src' , sites[current_site]);
+                          setInterval(function(){
+                                       if (current_site++ > sites.length-1){
+                                       current_site=0;
+                                       }
+                                       $('iframe').attr( 'src', sites[current_site]);
+                                       },20000);
+                          });
+    </script>
+</head>
+    
+<body>
+    
+    <iframe id='content' frameborder=0></iframe>
+</body>
