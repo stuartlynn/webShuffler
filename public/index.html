@@ -23,13 +23,29 @@
     <script>
         $(document).ready(function(){
                           
-                          var sites = ["http://live.zooniverse.org", "http://chicago.sciencehackday.com", "http://setlive.org","http://www.planethunters.org/planetometer", "https://www.zooniverse.org/","http://www.setilive.org/"];
+                          var sites = ["http://live.zooniverse.org",
+                                       "http://chicago.sciencehackday.com",
+                                       "http://setlive.org",
+                                       "http://www.planethunters.org/planetometer",
+                                       "https://www.zooniverse.org/",
+                                       "http://www.setilive.org/",
+                                       "https://www.zooniverse.org/project/milkyway",
+                                       "https://www.zooniverse.org/project/hubble",
+                                       "https://www.zooniverse.org/project/moonzoo",
+                                       "https://www.zooniverse.org/project/solarstormwatch",
+                                       "https://www.zooniverse.org/project/mergers",
+                                       "https://www.zooniverse.org/project/supernovae",
+                                       "https://www.zooniverse.org/project/planethunters",
+                                       "https://www.zooniverse.org/project/oldweather",
+                                       "https://www.zooniverse.org/project/ancientlives",
+                                       "https://www.zooniverse.org/project/whalefm"
+
+
+                                       ];
                           var current_site = 0;
                           $('#content').attr( 'src' , sites[current_site]);
                           setInterval(function(){
-                                       if (current_site++ > sites.length-1){
-                                       current_site=0;
-                                       }
+                                       current_site = Math.floor(Math.random()*sites.length);
                                        $('#content').attr( 'src', sites[current_site]);
                                        },20000);
                           });
